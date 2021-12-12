@@ -14,6 +14,13 @@ class Stack {
         this.top +=1;
         this.items[this.top] = value;
     }
+
+    pop(){
+        // remove key - value pair at this.items[this.top]
+        delete this.items[this.top];
+        // decrease pointer
+        this.top -= 1;
+    }
 }
 
 
@@ -26,8 +33,6 @@ describe('My Stack', () => {
     });
 
     it('is created empty', () => {
-        // const stack = new Stack();
-
         expect(stack.top).toBe(-1);
         expect(stack.items).toEqual({});
     });
@@ -38,7 +43,17 @@ describe('My Stack', () => {
         expect(stack.peek).toBe('🥪');
     });
 
-    it.todo('can pop off');
+
+    it('can pop off', () => {
+        stack.push('🥪');
+        stack.push('🍱');
+        stack.push('🥐');
+        console.log(stack);
+
+        stack.pop();
+        expect(stack.top).toBe(1);
+        expect(stack.peek).toEqual('🍱');
+    });
 
 
 
