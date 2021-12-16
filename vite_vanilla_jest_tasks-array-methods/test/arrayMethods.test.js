@@ -1,17 +1,15 @@
 // several tasks checked with TDD Jest
 
+// reverses a string
 const reverseString = (str) => str.split('').reduce((a, b) => (b + a));
-  
   
   
 // Return true if palindrome and false if not
 const palindromeChecker = (str) => str == str.split('').reduce((a, b) => (b + a)) ? true : false;
 
   
-  
-
 // Return an integer in reverse
-function reverseInt(int) {}
+const reverseInt = (int) => parseInt(int.toString().split('').reduce((a, b) => b + a ), 10);
   
   
 
