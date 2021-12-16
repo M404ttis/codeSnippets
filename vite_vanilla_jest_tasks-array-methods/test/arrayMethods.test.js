@@ -1,14 +1,12 @@
 // several tasks checked with TDD Jest
 
-function reverseString(str) {
-    return 'Let\'s Start'
-  }
+const reverseString = (str) => str.split('').reduce((a, b) => (b + a));
   
   
   
 // Return true if palindrome and false if not
-function palindromeChecker(str) {}
-  
+const palindromeChecker = (str) => str == str.split('').reduce((a, b) => (b + a)) ? true : false;
+
   
   
 
@@ -31,7 +29,7 @@ function maxCharacter(str) {}
 describe('My higher order arrow functions', () => {
 
     it('reverses a String', () => {
-        expect(stringReverser('hello')).toBe('olleh');
+        expect(reverseString('hello')).toBe('olleh');
     })
 
     test('returns true if pallindrome', () => {
