@@ -14,7 +14,7 @@ const reverseInt = (int) => parseInt(int.toString().split('').reduce((a, b) => b
   
 
 // Return a string with the first letter of every word capitalized
-function capitalizeLetters(str) {}
+const capitalizeLetters = str => str.toLowerCase().split(' ').map(s => s[0].toUpperCase() + s.substring(1)).join(' ')
 
 
 
@@ -39,7 +39,7 @@ describe('My higher order arrow functions', () => {
     })
 
     it('Return a string with the first letter of every word capitalized', () => {
-        expect(capitalizeLetters('i love javascript')).toBe('I Love Javascript')
+        expect(capitalizeLetters('i love javaScript')).toBe('I Love Javascript')
     })
 
     it('Returns the character that is most common in a string', () => {
