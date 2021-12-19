@@ -22,6 +22,8 @@ const capitalizeLetters = str => str.toLowerCase().split(' ').map(s => s[0].toUp
 function maxCharacter(str) {}
 
 
+// return the sum of all digits of a number
+const digitSum = num => [...`${Math.abs(num)}`].reduce((pre, val) => pre + +val, 0 );
 
 
 describe('My higher order arrow functions', () => {
@@ -44,6 +46,10 @@ describe('My higher order arrow functions', () => {
 
     it('Returns the character that is most common in a string', () => {
         expect(maxCharacter('javascript')).toBe('a')
+    })
+
+    test('digitSum returns sum of single digits of number', () => {
+        expect(digitSum(4361).toBe(14))
     })
 
 })
